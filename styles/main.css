@@ -1,0 +1,14 @@
+form > ul {
+    margin: 0;
+}
+
+form > ul > li {
+    display: inline-block;
+    margin: 10px;
+    background: #c4c4c4; /* BOOM */
+    box-shadow: 0 0 8px hsla(0, 0%, 0%, .7);
+}
+
+img {
+    vertical-align: baseline;
+}
