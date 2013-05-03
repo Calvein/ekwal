@@ -28,4 +28,4 @@
 
         return $els
     }
-}(jQuery)
+}(window.jQuery || window.Zepto);
