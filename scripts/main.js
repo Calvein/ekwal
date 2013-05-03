@@ -1,5 +1,7 @@
 /*global ekwal:false */
 
+!function($) {
+
 $(function() {
     "use strict"; // Yes, that's half an ass, damnit JSHint（╯°□°）╯ ︵ ┻━┻
 
@@ -68,3 +70,5 @@ $(function() {
         }
     })
 })
+
+}(window.jQuery || window.Zepto);
