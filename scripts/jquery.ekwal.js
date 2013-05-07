@@ -1,4 +1,5 @@
 /**
+ * @license
  * ekwal 1.0.0
  *
  * To use it, just call the jQuery#ekwal() method on the elements you want to equalize.
@@ -12,20 +13,20 @@
  * Date: Sep 14 19:45:00 2012
 */
 
-!function($) {
+;(function($) {
     $.fn.ekwal = function(jQueryDimension) {
         // `height` is the default value
-        jQueryDimension = jQueryDimension || 'height'
-        var $els = this
-          , prop = /eight/.test(jQueryDimension) ? 'height' : 'width';
+        jQueryDimension = jQueryDimension || 'height';
+        var $els = this,
+            prop = /eight/.test(jQueryDimension) ? 'height' : 'width';
 
         if (typeof $.fn[jQueryDimension] !== 'function')
-            throw new Error('$.fn.' + jQueryDimension + '() do not exist')
+            throw new Error('$.fn.' + jQueryDimension + '() do not exist');
 
         $els[prop](Math.max.apply(null, $.map($els, function(el) {
-            return $(el)[jQueryDimension]()
-        })))
+            return $(el)[jQueryDimension]();
+        })));
 
-        return $els
-    }
-}(window.jQuery || window.Zepto);
+        return $els;
+    };
+}(window.jQuery || window.Zepto));

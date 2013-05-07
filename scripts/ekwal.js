@@ -1,4 +1,5 @@
 /**
+ * @license
  * ekwal 1.0.0
  *
  * To use it, just call the ekwal() function with the elements you want to equalize.
@@ -17,21 +18,21 @@
  * Date: Sep 14 19:45:00 2012
  */
 
-!function() {
+;(function(window, undefined) {
     window.ekwal = function(els, prop) {
-        els = [].slice.call(els)
+        els = [].slice.call(els);
         // `height` is the default value
-        prop = prop || 'height'
+        prop = prop || 'height';
 
         if (prop !== 'height' && prop !== 'width')
-            throw new Error('"' + prop + '" must be "height" (by default) or "width"')
+            throw new Error('"' + prop + '" must be "height" (by default) or "width"');
 
         els.forEach(function(el) {
             el.style[prop] = Math.max.apply(null, els.map(function(el) {
-                return parseInt(getComputedStyle(el).getPropertyValue(prop), 10)
-            })) + 'px'
-        })
+                return parseInt(getComputedStyle(el).getPropertyValue(prop), 10);
+            })) + 'px';
+        });
 
-        return els
-    }
-}()
+        return els;
+    };
+}(window));
