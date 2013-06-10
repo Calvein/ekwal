@@ -13,20 +13,20 @@
  * Date: Sep 14 19:45:00 2012
 */
 
-;(function($) {
+(function($) {
     $.fn.ekwal = function(jQueryDimension) {
         // `height` is the default value
-        jQueryDimension = jQueryDimension || 'height';
+        jQueryDimension = jQueryDimension || 'height'
         var $els = this,
-            prop = /eight/.test(jQueryDimension) ? 'height' : 'width';
+            prop = /eight/.test(jQueryDimension) ? 'height' : 'width'
 
         if (typeof $.fn[jQueryDimension] !== 'function')
-            throw new Error('$.fn.' + jQueryDimension + '() do not exist');
+            throw new Error('$.fn.' + jQueryDimension + '() do not exist')
 
         $els[prop](Math.max.apply(null, $.map($els, function(el) {
-            return $(el)[jQueryDimension]();
-        })));
+            return $(el)[jQueryDimension]()
+        })))
 
-        return $els;
-    };
-}(window.jQuery || window.Zepto));
+        return $els
+    }
+}(window.jQuery || window.Zepto))
